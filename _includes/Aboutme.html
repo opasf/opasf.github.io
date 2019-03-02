@@ -1,0 +1,17 @@
+<div class="sidebar-module about">
+  <h4>{{ site.locales[site.default_locale].Aboutme }}</h4>
+  <span>
+    Open Pentesting and Security Framework is a Multi-User
+    Pentesting Environment. Open-Source and Self-Hosted Project
+    Management and Bug-Hunting.
+  </span>
+  <br />
+  <br />
+  {% if site.ShowContactInfo == "True" %}
+
+    Find more information: <br />
+
+    <a href="{{site.codeberg}}"><i class="fa fa-gitea fa-3x"></i></a>
+  {% endif %}
+
+</div>
