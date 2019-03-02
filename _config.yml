@@ -40,16 +40,6 @@ locales:
       Guestbook: "Guestbook"
       Subscribe: "Subscribe"
 
-### your Blogroll info, only name can shown on the page.
-
-Blogroll:
-      - name: Freshman
-        href: http://yulijia.net/freshman
-        title: Another Jekyll blog theme
-      - name: author's website
-        href: http://yulijia.net/
-        title: Lijia Yu's website
-
 
 ### Build settings
 markdown: kramdown
@@ -60,3 +50,11 @@ kramdown:
 plugins: [jekyll-paginate]
 paginate: 5
 excerpt_separator: <!-- more -->
+
+collections:
+  documentation:
+      output: true
+  tutorials:
+      output: true
+  posts:
+      output: true
