@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width initial-scale=1">
+
+<meta property="og:title" content="Master Slave Architecture">
+<title>Master Slave Architecture</title>
+<meta property="og:description" content="Master-Slave Application (in development)this module allows you to seperate your OPAS-F clients to multiple hosts or containers. this clients will request a ...">
+<meta property="og:url" content="http://localhost:4000/docs/master-slave-architecture/">
+<meta property="og:site_name" content="Open Pentesting and Security Framework">
+<meta property="og:locale" content="en_US">
+
+<meta name="keywords" content="opasf, Open Pentesting and Security Framework, Penetration Testing, Pentesting, Bug-Bounty, Bughunting, Bug-Hunting">
+
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="canonical" href="http://localhost:4000/docs/master-slave-architecture/">
+<link rel="alternate" type="application/atom+xml" title="Open Pentesting and Security Framework" href="http://localhost:4000/feed.xml" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+
+
+<body style="background-color: #29281e">
+
+<div class="container">
+
+  <header class="site-header">
+  <div class="wrapper">
+
+    <h1 class="site-title"><a href="/">Open Pentesting and Security Framework</a></h1>
+    <h3 class="site-meta">Open-Source Multi-User Pentesting Environment</h3>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+            <a class="page-link" href="/">Home</a>
+          
+        
+          
+            <a class="page-link" href="/about/">About</a>
+          
+        
+          
+            <a class="page-link" href="/archives/">Archives</a>
+          
+        
+          
+            <a class="page-link" href="/categories/">Categories</a>
+          
+        
+          
+            <a class="page-link" href="/tags/">Tags</a>
+          
+        
+          
+            <a class="page-link" href="/docs/">Documentation</a>
+          
+        
+          
+            <a class="page-link" href="/feed.xml">Subscribe</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+
+  <div class="page-content">
+    <div class="wrapper">
+      <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 itemprop="name" class="post-title">Master Slave Architecture</h1>
+    <meta itemprop="keywords" content="" />
+    <p class="post-meta">
+      updated
+    <time itemprop="datePublished" datetime="2019-01-22">
+    on Jan 22, 2019
+    </time>
+    </p>
+  </header>
+
+  <article class="post-content" itemprop="articleBody">
+    <h1 id="master-slave-application-in-development">Master-Slave Application (in development)</h1>
+<p>this module allows you to seperate your OPAS-F clients to multiple hosts or containers. this clients will request a command queue, execute them and push the results to your server.</p>
+
+<p><strong>At the moment there is no protection against an attacker to insert own commands in the database which gets than executed by your client</strong></p>
+
+<h1 id="setup">Setup</h1>
+<ul>
+  <li>add ‘ENABLE_MASTER_SLAVE_APPLICATION = True’ to your ‘local_settings.py’</li>
+  <li>if need execute ‘python manage.py migrate’</li>
+  <li>if not already done, create a pentesting project</li>
+  <li>create an application</li>
+  <li>application needs to have ‘client_credentials’ or ‘password’ as ‘grant_type’</li>
+</ul>
+
+<h1 id="usage">Usage</h1>
+<h2 id="prepare-your-environment">Prepare your environment</h2>
+<p>For this example. we will use our python api from <a href="https://codeberg.org/OPAS-F/opas-f-python-api">here</a>. Simply follow the setup guide.
+We assume, that you already setup a OPAS-F Server, with a user already created.</p>
+
+<h2 id="pentesting-master">Pentesting Master</h2>
+<p>For setting up a pentesting master we need to do the following:</p>
+
+<ol>
+  <li>Create a project (or use an existing one)</li>
+  <li>Setup a new application</li>
+  <li>Add command to queue, that are fetched from the slave</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">opasf_api</span> <span class="kn">import</span> <span class="n">OPASFClient</span>
+
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OPASFClient</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s">"your_username"</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s">"your_password"</span><span class="p">)</span>
+
+<span class="n">project</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_project</span><span class="p">(</span><span class="s">"Master-Slave Test Project"</span><span class="p">)</span>
+
+<span class="n">slave1</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_user_application</span><span class="p">(</span><span class="s">"confidential"</span><span class="p">,</span> <span class="s">"password"</span><span class="p">,</span> <span class="s">"Slave 1"</span><span class="p">)</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">create_queue_item</span><span class="p">(</span><span class="n">PROJECT_ID</span><span class="p">,</span> <span class="s">"nikto -h example.com"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()))</span>
+
+</code></pre></div></div>
+
+<p>This example script can be used to create a pentesting master. Simply edit the values to your needs.</p>
+
+<h2 id="pentesting-slave">Pentesting Slave</h2>
+<p>TODO</p>
+
+<p>until this one gets better documentation, you may look at the example code at <a href="https://codeberg.org/OPAS-F/opas-f-docs/issues/3">this issue</a></p>
+
+  </article>
+  <hr />
+</div>
+
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+
+  <p>Copyright &copy; <a href="/">Open Pentesting and Security Framework</a></p>
+  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> 
+  on 
+  <a href="https://github.com/">Github</a>
+  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="https://yulijia.net">Lijia Yu</a>  
+
+
+  <div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+    <a title="Back To Top"><img src="/images/topbutton.png"/></a>
+  </div>
+
+  <script src="/js/jquery-1.9.1.min.js"></script>
+  <script src="/js/totop.js"></script>  
+
+
+
+</footer>
+
+
+</div>
+
+</body>
+
+</html>

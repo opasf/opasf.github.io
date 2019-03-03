@@ -9,16 +9,10 @@
 
 <meta property="og:title" content="Setup">
 <title>Setup</title>
-<meta property="og:description" content="Setup Open Pentesting and Security Framework ServerFirst get the code from the opas-f-server repoDockerthe simplest way to set up your Open-Pentesting-And-Se...">
+<meta property="og:description" content="First get the code from the opas-f-server repoDockerthe simplest way to set up your Open-Pentesting-And-Security-Framework using docker. First step is to cop...">
 <meta property="og:url" content="http://localhost:4000/docs/setup/">
 <meta property="og:site_name" content="Open Pentesting and Security Framework">
 <meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@">
-<meta name="twitter:creator" content="@">
-<meta name="twitter:title" content="Setup">
-<meta name="twitter:description" content="Setup Open Pentesting and Security Framework ServerFirst get the code from the opas-f-server repoDockerthe simplest way to set up your Open-Pentesting-And-Se...">
-<meta name="twitter:url" content="http://localhost:4000/docs/setup/">
 
 <meta name="keywords" content="opasf, Open Pentesting and Security Framework, Penetration Testing, Pentesting, Bug-Bounty, Bughunting, Bug-Hunting">
 
@@ -52,76 +46,75 @@
       </a>
       <div class="trigger">
         
+          
+            <a class="page-link" href="/">Home</a>
+          
         
-        <a class="page-link" href="/">Home</a>
+          
+            <a class="page-link" href="/about/">About</a>
+          
         
+          
+            <a class="page-link" href="/archives/">Archives</a>
+          
         
+          
+            <a class="page-link" href="/categories/">Categories</a>
+          
         
-        <a class="page-link" href="/about/">About</a>
+          
+            <a class="page-link" href="/tags/">Tags</a>
+          
         
+          
+            <a class="page-link" href="/docs/">Documentation</a>
+          
         
+          
+            <a class="page-link" href="/feed.xml">Subscribe</a>
+          
         
-        <a class="page-link" href="/archives/">Archives</a>
+          
         
-        
-        
-        <a class="page-link" href="/categories/">Categories</a>
-        
-        
-        
-        <a class="page-link" href="/tags/">Tags</a>
-        
-        
-        
-        <a class="page-link" href="/docs/">Documentation</a>
-        
-        
-        
-        <a class="page-link" href="/feed.xml">Subscribe</a>
-        
-        
-        
-        
-        
+          
         
       </div>
     </nav>
-
   </div>
-
 </header>
 
 
-    
 
-  <div class="page-content col-sm-8">
-    <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="page-content">
+    <div class="wrapper">
+      <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
     <h1 itemprop="name" class="post-title">Setup</h1>
     <meta itemprop="keywords" content="" />
     <p class="post-meta">
       updated
-    <time itemprop="datePublished" datetime="2019-03-02">
-    on Mar 2, 2019
+    <time itemprop="datePublished" datetime="2019-03-03">
+    on Mar 3, 2019
     </time>
     </p>
   </header>
 
   <article class="post-content" itemprop="articleBody">
-    <h1 id="setup-open-pentesting-and-security-framework-server">Setup Open Pentesting and Security Framework Server</h1>
-<p>First get the code from the <a href="https://codeberg.org/OPAS-F/opas-f-server">opas-f-server repo</a></p>
+    <p>First get the code from the <a href="https://codeberg.org/OPAS-F/opas-f-server">opas-f-server repo</a></p>
 
-<h1 id="docker">Docker</h1>
-<p>the simplest way to set up your Open-Pentesting-And-Security-Framework using docker. First step is to copy the ‘local_settings.template.py’ file to ‘local_settings.py’ and edit it to fit your needs.</p>
+<h2 id="docker">Docker</h2>
+<p>the simplest way to set up your Open-Pentesting-And-Security-Framework using docker. 
+First step is to copy the ‘local_settings.template.py’ file to ‘local_settings.py’ and edit it to fit your needs.</p>
 
 <p><code class="highlighter-rouge">docker-compose up</code></p>
 
-<h2 id="docker-with-postgres-database">Docker with Postgres database</h2>
+<h3 id="docker-with-postgres-database">Docker with Postgres database</h3>
 <p>TODO</p>
 
-<h1 id="without-docker-linux">Without Docker (Linux)</h1>
-<h2 id="database">Database</h2>
+<h2 id="without-docker-linux">Without Docker (Linux)</h2>
+
+<h3 id="database">Database</h3>
 <ul>
   <li>install needed software
     <ul>
@@ -161,7 +154,7 @@
   </li>
 </ul>
 
-<h2 id="open-pentesting-and-security-framework">Open-Pentesting-And-Security-Framework</h2>
+<h3 id="open-pentesting-and-security-framework">Open-Pentesting-And-Security-Framework</h3>
 <ul>
   <li>install git, virtualenv (optional)
     <ul>
@@ -239,12 +232,12 @@ WantedBy=multi-user.target
 
 </code></pre></div></div>
 
-<h2 id="setup-bughunting-auto-disclosure">Setup Bughunting auto disclosure</h2>
+<h3 id="setup-bughunting-auto-disclosure">Setup Bughunting auto disclosure</h3>
 <p>Todo: explain how to set up without docker</p>
 
 <p>If you use docker, you do not need to configure anything here.</p>
 
-<h1 id="docker-hidden-service">Docker Hidden-Service</h1>
+<h2 id="docker-hidden-service">Docker Hidden-Service</h2>
 <p>We created a simple script that allows you to easily create V3 - Hidden-Services that are running the api server.
 If you did not already create a ‘local_settings.py’ file, you should create one by reading steps above.</p>
 
@@ -259,7 +252,7 @@ If you did not already create a ‘local_settings.py’ file, you should create 
 
 <p>(TODO: add room identifier)</p>
 
-<p>You are now using the server with our predefined settings. Some tips of how to change settings see the <a href="settings">settings page</a></p>
+<p>You are now using the server with our predefined settings. Some tips of how to change settings see the <a href="/docs/settings/">settings page</a></p>
 
 <p>Happy Hacking!</p>
 
@@ -268,132 +261,8 @@ If you did not already create a ‘local_settings.py’ file, you should create 
 </div>
 
 
-<section class="pager">
-  <ul>
-    
-    <li class="disabled"><a>&larr; Older</a></li>
-    
-    
-    <li class="disabled"><a>Newer &rarr;</a></li>
-    
-  </ul>
-</section>
-
-<script src="/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
-$(function(){
-  $(document).keydown(function(e) {
-    if (e.target.nodeName.toUpperCase() != 'BODY') return;
-    var url = false;
-        if (e.which == 37 || e.which == 74) {  // Left arrow and J
-            
-        }
-        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
-            
-        }
-        if (url) {
-            window.location = url;
-        }
-  });
-})
-</script>
-
-
-
-
-
-    <section class="pager">
-  
-  
-</section>
-
-<script src="/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
-$(function(){
-  $(document).keydown(function(e) {
-    if (e.target.nodeName.toUpperCase() != 'BODY') return;
-    var url = false;
-        if (e.which == 37 || e.which == 74) {  // Left arrow and J
-        
-        }
-        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
-            
-        }
-        if (url) {
-            window.location = url;
-        }
-  });
-})
-</script>
-
-
-
+    </div>
   </div>
-  <div class="col-sm-2">
-<div class="sidebar-module about">
-  <h4>About</h4>
-  <span>
-    Open Pentesting and Security Framework is a Multi-User
-    Pentesting Environment. Open-Source and Self-Hosted Project
-    Management and Bug-Hunting.
-  </span>
-  <br />
-  <br />
-  
-
-    View the Code: <br />
-
-    <a href="https://codeberg.org/OPAS-F"><i class="fa fa-gitea fa-3x"></i></a>
-  
-
-</div>
-
-<div class="sidebar-module">
-  <h4>Recent Posts</h4>
-  
-  <li>
-  <a href="/news/2019/03/01/welcome.html" title="Welcome" rel="bookmark">Welcome</a>
-  </li>
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Categories</h4>
-  
-  <li><a href="/categories/#news" title="news" rel="1">news (1)</a></li>
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Tags</h4>
-  
-    <a href="/tags/#welcome" title="welcome" rel="1">welcome</a> &nbsp;
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Archives</h4>
-
-  
-  
-  
-  
-  
-  <li id="2019" > <a href="/archives/#2019">2019</a></li>
-  
-  
-
-</div>
-
-
-</div>
-
-
-
-  
 
   <footer class="site-footer">
 

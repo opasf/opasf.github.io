@@ -9,7 +9,7 @@ updated: 2019-03-02
 This page collects links to the overview pages of the wiki.
 
 ## Server
-See [server overview](server-overview)
+See [server overview]({% link _documentation/server_overview.md %})
 
 ## Command Line Interface
 

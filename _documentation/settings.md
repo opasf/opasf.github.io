@@ -5,10 +5,11 @@ layout: docs
 updated: 2019-03-02
 ---
 
-# Settings
 If you start the server for the first time it should run out of the box using the default values for the different settings. You can configure the server by editing values from within the 'local_settings.py' file.
 
 ## Available Settings (Server)
+
+
 | NAME | Default Value | Description |
 | -------- | -------- | -------- |
 | DEBUG | False | Enable Debug |

@@ -7,8 +7,8 @@ layout: default
     <h1 itemprop="name" class="post-title">{{ page.title }}</h1>
     <meta itemprop="keywords" content="{{ page.tags | join: ',' }}" />
     <p class="post-meta">
-    <time itemprop="datePublished" datetime="{{ page.updated | date: '%Y-%m-%d' }}">
-    {{ site.locales[site.default_locale].PostDate }}{{ page.updated }}
+    <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d' }}">
+    {{ site.locales[site.default_locale].PostDate }}{{ page.date }}
     </time>
     </p>
   </header>

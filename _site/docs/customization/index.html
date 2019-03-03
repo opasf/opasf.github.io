@@ -7,10 +7,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width initial-scale=1">
 
-<meta property="og:title" content="Categories">
-<title>Categories</title>
-<meta property="og:description" content="Open Pentesting and Security Framework">
-<meta property="og:url" content="http://localhost:4000/categories/">
+<meta property="og:title" content="Customization">
+<title>Customization</title>
+<meta property="og:description" content="BughuntingCustom Bug Notification Mail Templatesdefault notification mail looks like this:Dear domain owner of ,we are currently running an instance of CySec...">
+<meta property="og:url" content="http://localhost:4000/docs/customization/">
 <meta property="og:site_name" content="Open Pentesting and Security Framework">
 <meta property="og:locale" content="en_US">
 
@@ -18,7 +18,7 @@
 
 <link rel="icon" href="/images/favicon.ico">
 <link rel="stylesheet" href="/css/main.css">
-<link rel="canonical" href="http://localhost:4000/categories/">
+<link rel="canonical" href="http://localhost:4000/docs/customization/">
 <link rel="alternate" type="application/atom+xml" title="Open Pentesting and Security Framework" href="http://localhost:4000/feed.xml" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -84,131 +84,62 @@
 </header>
 
 
-    
 
-  <div class="page-content col-sm-8">
-    <div class="post">
+  <div class="page-content">
+    <div class="wrapper">
+      <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">Categories</h1>
+    <h1 itemprop="name" class="post-title">Customization</h1>
+    <meta itemprop="keywords" content="" />
+    <p class="post-meta">
+      updated
+    <time itemprop="datePublished" datetime="2019-03-02">
+    on Mar 2, 2019
+    </time>
+    </p>
   </header>
 
-  <article class="post-content about"> 
-    <ul class="tags-box">
+  <article class="post-content" itemprop="articleBody">
+    <h1 id="bughunting">Bughunting</h1>
+
+<h2 id="custom-bug-notification-mail-templates">Custom Bug Notification Mail Templates</h2>
+<p>default notification mail looks like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dear domain owner of ,
 
 
-<a href="#news" title="news" rel="1">news<span class="size"> 1</span></a>
+we are currently running an instance of CySec-Framework (https://cysec-framework.gitlab.io), which allows security researchers
+to publish found vulnerabilities and help admins to fix them.
 
-</ul>
+ is one of our bug hunters. He found a vulnerability in your application.
 
-<ul class="tags-box">
+You can find more details here: 
 
-<li id="news">news</li>
+This link is valid until the bug is disclosed on 
 
-<time datetime="2019-03-01">2019-03-01</time> &raquo;
-<a href="/news/2019/03/01/welcome.html" title="Welcome">Welcome</a><br />
+</code></pre></div></div>
 
+<p>you can use all attributes of the vulnerability and the generated detail link.</p>
 
+<p>Create a new template called <code class="highlighter-rouge">bug_notification_mail.html</code> in directory <code class="highlighter-rouge">templates/bughunting</code></p>
 
-</ul>
+<p>For customizing the mail subject by creating a file <code class="highlighter-rouge">bug_notification_mail_subject.html</code> in directory <code class="highlighter-rouge">templates/bughunting</code>. You can use  all vulnerability attributes here.</p>
 
+<h2 id="custom-bot-messages">Custom Bot Messages</h2>
+<p>Todo</p>
+
+<h1 id="pentesting">Pentesting</h1>
+<h2 id="custom-report-templates">Custom Report Templates</h2>
+<p>TODO</p>
 
   </article>
-
-</div> 
-
-    <section class="pager">
-  
-  
-</section>
-
-<script src="/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
-$(function(){
-  $(document).keydown(function(e) {
-    if (e.target.nodeName.toUpperCase() != 'BODY') return;
-    var url = false;
-        if (e.which == 37 || e.which == 74) {  // Left arrow and J
-        
-        }
-        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
-            
-        }
-        if (url) {
-            window.location = url;
-        }
-  });
-})
-</script>
+  <hr />
+</div>
 
 
-
+    </div>
   </div>
-  <div class="col-sm-2">
-<div class="sidebar-module about">
-  <h4>About</h4>
-  <span>
-    Open Pentesting and Security Framework is a Multi-User
-    Pentesting Environment. Open-Source and Self-Hosted Project
-    Management and Bug-Hunting.
-  </span>
-  <br />
-  <br />
-  
-
-    View the Code: <br />
-
-    <a href="https://codeberg.org/OPAS-F"><i class="fa fa-gitea fa-3x"></i></a>
-  
-
-</div>
-
-<div class="sidebar-module">
-  <h4>Recent Posts</h4>
-  
-  <li>
-  <a href="/news/2019/03/01/welcome.html" title="Welcome" rel="bookmark">Welcome</a>
-  </li>
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Categories</h4>
-  
-  <li><a href="/categories/#news" title="news" rel="1">news (1)</a></li>
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Tags</h4>
-  
-    <a href="/tags/#welcome" title="welcome" rel="1">welcome</a> &nbsp;
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Archives</h4>
-
-  
-  
-  
-  
-  
-  <li id="2019" > <a href="/archives/#2019">2019</a></li>
-  
-  
-
-</div>
-
-
-</div>
-
-
-
-  
 
   <footer class="site-footer">
 

@@ -2,23 +2,28 @@
 title: Setup
 permalink: /docs/setup/
 layout: docs
-updated: 2019-03-02
+updated: 2019-03-03
 ---
 
-# Setup Open Pentesting and Security Framework Server
 First get the code from the [opas-f-server repo](https://codeberg.org/OPAS-F/opas-f-server)
 
-# Docker
-the simplest way to set up your Open-Pentesting-And-Security-Framework using docker. First step is to copy the 'local_settings.template.py' file to 'local_settings.py' and edit it to fit your needs.
+
+## Docker
+the simplest way to set up your Open-Pentesting-And-Security-Framework using docker. 
+First step is to copy the 'local_settings.template.py' file to 'local_settings.py' and edit it to fit your needs.
 
 `docker-compose up`
 
 
-## Docker with Postgres database
+### Docker with Postgres database
 TODO
 
-# Without Docker (Linux)
-## Database
+
+
+## Without Docker (Linux)
+
+
+### Database
 - install needed software
     - `sudo apt install libpq-dev postgresql postgresql-contrib`
 - setup database
@@ -47,7 +52,8 @@ TODO
     - `systemctl enable postgresql`
 
 
-## Open-Pentesting-And-Security-Framework 
+
+### Open-Pentesting-And-Security-Framework 
 - install git, virtualenv (optional)
     - `sudo apt install git virtualenv`
 - clone code
@@ -92,20 +98,25 @@ WantedBy=multi-user.target
 
 ```
 
-## Setup Bughunting auto disclosure
+
+### Setup Bughunting auto disclosure
 Todo: explain how to set up without docker
 
 If you use docker, you do not need to configure anything here.
 
-# Docker Hidden-Service
+
+
+## Docker Hidden-Service
 We created a simple script that allows you to easily create V3 - Hidden-Services that are running the api server.
 If you did not already create a 'local_settings.py' file, you should create one by reading steps above.
 
 For the hidden services to be created run `sh run_as_tor_hidden_service_v3.sh`. After they have been created and started, you need to change the 'ALLOWED_HOSTS' setting in the 'local_settings.py' file to your new hidden service addresses (they end with .onion). The script will output the generated addresses.
 
 
+
 ## Docker Hidden-Service with Postgres database
 run `docker-compose -f docker-compose-tor-postgres.yml up`. Configure your local_settings.py and volume paths in 'docker-compose-tor-postgres.yml' to fit your needs.
+
 
 
 ## Next Steps
@@ -114,6 +125,6 @@ Now your server should be up and running, hopefully ;). If you need some help, f
 
 (TODO: add room identifier)
 
-You are now using the server with our predefined settings. Some tips of how to change settings see the [settings page](settings)
+You are now using the server with our predefined settings. Some tips of how to change settings see the [settings page]({% link _documentation/settings.md %})
 
 Happy Hacking!

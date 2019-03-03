@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width initial-scale=1">
+
+<meta property="og:title" content="Server Overview">
+<title>Server Overview</title>
+<meta property="og:description" content="Server of Open Pentesting and Security FrameworkTODOAPIThe API is documented at ‘host:port/api-docs’.Pentesting applicationThis application handles everythin...">
+<meta property="og:url" content="http://localhost:4000/docs/server-overview/">
+<meta property="og:site_name" content="Open Pentesting and Security Framework">
+<meta property="og:locale" content="en_US">
+
+<meta name="keywords" content="opasf, Open Pentesting and Security Framework, Penetration Testing, Pentesting, Bug-Bounty, Bughunting, Bug-Hunting">
+
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="canonical" href="http://localhost:4000/docs/server-overview/">
+<link rel="alternate" type="application/atom+xml" title="Open Pentesting and Security Framework" href="http://localhost:4000/feed.xml" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+
+
+<body style="background-color: #29281e">
+
+<div class="container">
+
+  <header class="site-header">
+  <div class="wrapper">
+
+    <h1 class="site-title"><a href="/">Open Pentesting and Security Framework</a></h1>
+    <h3 class="site-meta">Open-Source Multi-User Pentesting Environment</h3>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+            <a class="page-link" href="/">Home</a>
+          
+        
+          
+            <a class="page-link" href="/about/">About</a>
+          
+        
+          
+            <a class="page-link" href="/archives/">Archives</a>
+          
+        
+          
+            <a class="page-link" href="/categories/">Categories</a>
+          
+        
+          
+            <a class="page-link" href="/tags/">Tags</a>
+          
+        
+          
+            <a class="page-link" href="/docs/">Documentation</a>
+          
+        
+          
+            <a class="page-link" href="/feed.xml">Subscribe</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+
+  <div class="page-content">
+    <div class="wrapper">
+      <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 itemprop="name" class="post-title">Server Overview</h1>
+    <meta itemprop="keywords" content="" />
+    <p class="post-meta">
+      updated
+    <time itemprop="datePublished" datetime="2019-03-02">
+    on Mar 2, 2019
+    </time>
+    </p>
+  </header>
+
+  <article class="post-content" itemprop="articleBody">
+    <h1 id="server-of-open-pentesting-and-security-framework">Server of Open Pentesting and Security Framework</h1>
+<p>TODO</p>
+
+<h2 id="api">API</h2>
+<p>The API is documented at ‘host:port/api-docs’.</p>
+
+<h2 id="pentesting-application">Pentesting application</h2>
+<p>This application handles everything you need to manage your pentesting projects.</p>
+
+<h3 id="projects">Projects</h3>
+<p>You can add other users to your projects and specify a project role for them, e.g. “pentester”.</p>
+
+<h3 id="reports">Reports</h3>
+<p>OPAS-F allows you to easily create pentesting reports, based on an installed template. 
+All reports can optionally be encrypted (server-side only for now :( ) 
+using AES-GCM or ChaChaPoly. You can send the report link to your customer 
+which allows him to download the report, without the need to create an account 
+on the server. You may have a look at the <a href="/docs/customization/">customization page</a> 
+to customize your report templates.</p>
+
+<h2 id="bughunting-application">Bughunting application</h2>
+<p>This application allows your users to submit bugs found in any application. 
+OPAS-F will persist the bug details and send a notification mail to a contact 
+address including an access link. This link allows the admin to access bug details, 
+without the need to register to the server. If a bug gets not fixed since 30 Days 
+all submitted details become public.
+A bughunter could optionally increase the disclosure time, if an admin needs more 
+time to fix complex bugs.</p>
+
+<p>Also a bughunter can win virtuel awards for submitting bugs.</p>
+
+<p>This application is enabled by default, but needs some configuration to make email 
+notifcation work. If you want to disable the application, have a 
+look at <a href="/docs/settings/">settings page</a>.</p>
+
+<h3 id="bug-disclosed-bots">Bug Disclosed Bots</h3>
+<p>If a bug becomes disclosed, OPAS-F allows you to configure bots for social media, 
+that posts a message to it. Currenlty only a matrix bot is available, 
+but its quite easy to <a href="/docs/extend/">code your own</a>.</p>
+
+<h2 id="master-slave-application">Master-Slave application</h2>
+<p>Maybe you want to seperate your work using different hosts, 
+and everyone should do a different job. 
+This is why we implemented a simple master-slave architecture, which handles such situations.</p>
+
+<p>From your account, you need to create a new “application”, e.g.: 
+“Slave 1”. You will receive tokens, which the slave needs to authenticate itself to the server.</p>
+
+<p>Further details can be found at the 
+<a href="/docs/master-slave-architecture/">master-slave wiki page</a></p>
+
+<h2 id="blogging-application">Blogging application</h2>
+<p>TODO</p>
+
+<h2 id="accounts-application">Accounts application</h2>
+<p>TODO</p>
+
+  </article>
+  <hr />
+</div>
+
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+
+  <p>Copyright &copy; <a href="/">Open Pentesting and Security Framework</a></p>
+  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> 
+  on 
+  <a href="https://github.com/">Github</a>
+  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="https://yulijia.net">Lijia Yu</a>  
+
+
+  <div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+    <a title="Back To Top"><img src="/images/topbutton.png"/></a>
+  </div>
+
+  <script src="/js/jquery-1.9.1.min.js"></script>
+  <script src="/js/totop.js"></script>  
+
+
+
+</footer>
+
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width initial-scale=1">
+
+<meta property="og:title" content="Settings">
+<title>Settings</title>
+<meta property="og:description" content="If you start the server for the first time it should run out of the box using the default values for the different settings. You can configure the server by ...">
+<meta property="og:url" content="http://localhost:4000/docs/settings/">
+<meta property="og:site_name" content="Open Pentesting and Security Framework">
+<meta property="og:locale" content="en_US">
+
+<meta name="keywords" content="opasf, Open Pentesting and Security Framework, Penetration Testing, Pentesting, Bug-Bounty, Bughunting, Bug-Hunting">
+
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="canonical" href="http://localhost:4000/docs/settings/">
+<link rel="alternate" type="application/atom+xml" title="Open Pentesting and Security Framework" href="http://localhost:4000/feed.xml" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+
+
+<body style="background-color: #29281e">
+
+<div class="container">
+
+  <header class="site-header">
+  <div class="wrapper">
+
+    <h1 class="site-title"><a href="/">Open Pentesting and Security Framework</a></h1>
+    <h3 class="site-meta">Open-Source Multi-User Pentesting Environment</h3>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          
+            <a class="page-link" href="/">Home</a>
+          
+        
+          
+            <a class="page-link" href="/about/">About</a>
+          
+        
+          
+            <a class="page-link" href="/archives/">Archives</a>
+          
+        
+          
+            <a class="page-link" href="/categories/">Categories</a>
+          
+        
+          
+            <a class="page-link" href="/tags/">Tags</a>
+          
+        
+          
+            <a class="page-link" href="/docs/">Documentation</a>
+          
+        
+          
+            <a class="page-link" href="/feed.xml">Subscribe</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+
+  <div class="page-content">
+    <div class="wrapper">
+      <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 itemprop="name" class="post-title">Settings</h1>
+    <meta itemprop="keywords" content="" />
+    <p class="post-meta">
+      updated
+    <time itemprop="datePublished" datetime="2019-03-02">
+    on Mar 2, 2019
+    </time>
+    </p>
+  </header>
+
+  <article class="post-content" itemprop="articleBody">
+    <p>If you start the server for the first time it should run out of the box using the default values for the different settings. You can configure the server by editing values from within the ‘local_settings.py’ file.</p>
+
+<h2 id="available-settings-server">Available Settings (Server)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>Default Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DEBUG</td>
+      <td>False</td>
+      <td>Enable Debug</td>
+    </tr>
+    <tr>
+      <td>ENABLE_REGISTRATION</td>
+      <td>False</td>
+      <td>Enable registration of new user accounts</td>
+    </tr>
+    <tr>
+      <td>PASSWORD_RESET_TIMEOUT_DAYS</td>
+      <td>14</td>
+      <td>Token used for password reset is valid for X days</td>
+    </tr>
+    <tr>
+      <td>SIGNUP_ACTIVATION_EMAIL_SUBJECT</td>
+      <td>“Activate your OPAS-F Account”</td>
+      <td>E-Mail subject of the account registration email</td>
+    </tr>
+    <tr>
+      <td>BUG_DISCLOSURE_DAYS</td>
+      <td>30</td>
+      <td>Days until discovered bugs gets disclosed</td>
+    </tr>
+    <tr>
+      <td>ENABLE_MASTER_SLAVE_APPLICATION</td>
+      <td>False</td>
+      <td>Enable Master-Slave application</td>
+    </tr>
+    <tr>
+      <td>ENABLE_BUGHUNTING_APPLICATION</td>
+      <td>False</td>
+      <td>Enable Bughunting application</td>
+    </tr>
+    <tr>
+      <td>ENABLE_BLOGGING_APPLICATION</td>
+      <td>True</td>
+      <td>Enable Blogging application</td>
+    </tr>
+    <tr>
+      <td>EMAIL_HOST</td>
+      <td>“localhost”</td>
+      <td>The host to use for sending email.</td>
+    </tr>
+    <tr>
+      <td>EMAIL_PORT</td>
+      <td>25</td>
+      <td>Port to use for the SMTP server defined in EMAIL_HOST.</td>
+    </tr>
+    <tr>
+      <td>EMAIL_HOST_USER</td>
+      <td>’’</td>
+      <td>Username to use for the SMTP server defined in EMAIL_HOST. If empty, Django won’t attempt authentication.</td>
+    </tr>
+    <tr>
+      <td>EMAIL_HOST_PASSWORD</td>
+      <td>’’</td>
+      <td>Password to use for the SMTP server defined in EMAIL_HOST.</td>
+    </tr>
+    <tr>
+      <td>EMAIL_USE_TLS</td>
+      <td>False</td>
+      <td>Whether to use a TLS (secure) connection when talking to the SMTP server.</td>
+    </tr>
+    <tr>
+      <td>EMAIL_USE_SSL</td>
+      <td>False</td>
+      <td>Whether to use an implicit TLS (secure) connection when talking to the SMTP server.</td>
+    </tr>
+    <tr>
+      <td>DEFAULT_FROM_EMAIL</td>
+      <td>‘webmaster@localhost’</td>
+      <td>Default email address to use for various automated correspondence from the site manager(s).</td>
+    </tr>
+    <tr>
+      <td>ENABLE_ADMIN_INTERFACE</td>
+      <td>True</td>
+      <td>Enable admin interface</td>
+    </tr>
+    <tr>
+      <td>ADMIN_URL_PATH</td>
+      <td>“admin/”</td>
+      <td>Change admin url path to hide admin interface if needed</td>
+    </tr>
+    <tr>
+      <td>SELF_DOMAIN</td>
+      <td>“http://localhost:8000”</td>
+      <td>Domain which should be used by bug disclosure script</td>
+    </tr>
+    <tr>
+      <td>BUG_DISCLOSURE_BOTS</td>
+      <td>[{‘name’: ‘matrix’, ‘enabled’:False, ‘module’:’bughunting.bots.matrix’, ‘args’:[]}]</td>
+      <td>List of dictionaries with settings for bot modules</td>
+    </tr>
+    <tr>
+      <td>SIGNUP_CAPTCHA</td>
+      <td>True</td>
+      <td>Enable to solve captcha on signup</td>
+    </tr>
+    <tr>
+      <td>REQUIRE_SIGNUP_EMAIL</td>
+      <td>True</td>
+      <td>Accounts only become active after email confirmation</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>for a full list see <a href="https://docs.djangoproject.com/en/dev/ref/settings/">django docs</a></em></p>
+<h1 id="misc">Misc</h1>
+<h2 id="anonymous-mailing-server">Anonymous Mailing (Server)</h2>
+<p><em>requires tor and pysocks to be installed</em></p>
+
+<p>add the following to your local_settings.py file</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">socks</span>
+<span class="kn">import</span> <span class="nn">smtplib</span>
+<span class="n">socks</span><span class="o">.</span><span class="n">setdefaultproxy</span><span class="p">(</span><span class="n">socks</span><span class="o">.</span><span class="n">SOCKS5</span><span class="p">,</span> <span class="s">'localhost'</span><span class="p">,</span> <span class="mi">9050</span><span class="p">)</span>
+<span class="n">socks</span><span class="o">.</span><span class="n">wrapmodule</span><span class="p">(</span><span class="n">smtplib</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="postgres-database-server">Postgres Database (Server)</h2>
+<p><em>requires psycopg2-binary to be installed</em></p>
+
+<p>add the following to your local_settings.py file:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.postgresql_psycopg2'</span><span class="p">,</span>
+        <span class="s">'NAME'</span><span class="p">:</span> <span class="s">'opasf_db'</span><span class="p">,</span>
+        <span class="s">'USER'</span><span class="p">:</span> <span class="s">'opasf_user'</span><span class="p">,</span>
+        <span class="s">'PASSWORD'</span><span class="p">:</span> <span class="s">'somesecurepassword'</span><span class="p">,</span>
+        <span class="s">'HOST'</span><span class="p">:</span> <span class="s">'localhost'</span><span class="p">,</span>
+        <span class="s">'PORT'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p><em>note: for the docker-compose setup using postgres, you need to set ‘HOST’ to ‘db’</em></p>
+
+  </article>
+  <hr />
+</div>
+
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+
+  <p>Copyright &copy; <a href="/">Open Pentesting and Security Framework</a></p>
+  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> 
+  on 
+  <a href="https://github.com/">Github</a>
+  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="https://yulijia.net">Lijia Yu</a>  
+
+
+  <div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+    <a title="Back To Top"><img src="/images/topbutton.png"/></a>
+  </div>
+
+  <script src="/js/jquery-1.9.1.min.js"></script>
+  <script src="/js/totop.js"></script>  
+
+
+
+</footer>
+
+
+</div>
+
+</body>
+
+</html>

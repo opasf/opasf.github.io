@@ -15,7 +15,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font-family: "Lato", "Open Sans", Helvetica, Arial, sans-serif !important;
+  font-family: 'Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace';
   font-size: 16px;
   line-height: 1.6em;
   font-weight: 300;
@@ -98,7 +98,15 @@ li > ol {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 300; }
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(181, 232, 83, 0.1), 0 0 10px rgba(181, 232, 83, 0.1); }
+
+h1 {
+  margin-top: 20px; }
+
+h2, h3, h4, h5, h6 {
+  margin-top: 10px; }
 
 /**
  * Links
@@ -253,9 +261,8 @@ cite {
   letter-spacing: -1px;
   margin-bottom: 0;
   text-align: center; }
-  .site-title a, .site-title a:visited
-  .site-title a:hover {
-    color: #2583ad;
+  .site-title a, .site-title a:visited, .site-title a:hover {
+    color: #424242;
     border-bottom: 1px dotted;
     text-decoration: none; }
 
