@@ -36,8 +36,8 @@ ul, ol, dl, figure {
  */
 .container {
   min-height: 100%;
-  max-width: -webkit-calc(1000px - (15px * 2));
-  max-width: calc(1000px - (15px * 2));
+  max-width: -webkit-calc(1200px - (15px * 2));
+  max-width: calc(1200px - (15px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
