@@ -54,7 +54,7 @@ def write_to_file(self, item, spider):
         url, name, item['xss_param'], path, item['xss_payload'], spider.contact_email, is_draft=True,
         method=method
     )
-    spider.logger.error(resp)
+    spider.logger.debug(resp)
 ```
 
 - edit `xsscrapy/spiders/xss_spider.py` and add `from opasf_api.clients import OPASFClient`
