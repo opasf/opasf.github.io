@@ -51,7 +51,7 @@ def write_to_file(self, item, spider):
     url = urlparse(item['orig_url']).geturl()
     path = urlparse(item['orig_url']).path
     resp = spider.client.create_bug(
-        url, name, item['xss_param'], path, item['xss_payload'], spider.contact_email, is_draft=True,
+        url, name, path, item['xss_param'], item['xss_payload'], spider.contact_email, is_draft=True,
         method=method
     )
     spider.logger.debug(resp)
