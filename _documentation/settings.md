@@ -33,7 +33,7 @@ If you start the server for the first time it should run out of the box using th
 | BUG_DISCLOSURE_BOTS | [{'name': 'matrix', 'enabled':False, 'module':'bughunting.bots.matrix', 'args':[]}] | List of dictionaries with settings for bot modules |
 | SIGNUP_CAPTCHA | True | Enable to solve captcha on signup |
 | REQUIRE_SIGNUP_EMAIL | True | Accounts only become active after email confirmation |
-
+| BUGHUNTING_NEED_MANUAL_APPROVING | False | Bugs gets only published after an OPASF admin has approved |
 
 *for a full list see [django docs](https://docs.djangoproject.com/en/dev/ref/settings/)*
 # Misc
